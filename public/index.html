@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chattr</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="join-screen" class="screen active">
+    <div class="join-card">
+      <div class="logo">💬 Chattr</div>
+      <p class="tagline">Real-time rooms. No noise.</p>
+      <input type="text" id="username-input" placeholder="Your name" maxlength="20" />
+      <input type="text" id="room-input" placeholder="Room name (e.g. design-team)" maxlength="30" />
+      <button id="join-btn">Join Room →</button>
+      <p class="hint">No account needed. Just jump in.</p>
+    </div>
+  </div>
+
+  <div id="chat-screen" class="screen">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-sm">💬 Chattr</span>
+        <button id="leave-btn" title="Leave room">✕</button>
+      </div>
+      <div class="room-info">
+        <div class="room-label">ROOM</div>
+        <div id="room-name-display" class="room-name"></div>
+      </div>
+      <div class="users-section">
+        <div class="section-label">MEMBERS</div>
+        <ul id="user-list"></ul>
+      </div>
+    </aside>
+
+    <main class="chat-main">
+      <div class="chat-header">
+        <span id="chat-room-title"></span>
+        <span id="online-count" class="online-badge"></span>
+      </div>
+      <div id="messages" class="messages"></div>
+      <div id="typing-indicator" class="typing-indicator"></div>
+      <div class="input-area">
+        <input type="text" id="message-input" placeholder="Message…" autocomplete="off" />
+        <button id="send-btn">Send</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/client.js"></script>
+</body>
+</html>
