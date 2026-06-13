@@ -2,9 +2,10 @@
   "name": "chattr-real-time-chat-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
